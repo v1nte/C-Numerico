@@ -2,15 +2,17 @@
 Gauss method for linear system equation
 """
 import numpy as np
-import os 
+from os import system as sys
+from platform import system as os
+
 
 def clear():
     """clear terminal """
-    
-    try:
-        os.system('clear')
-    except:
-        os.system('cls')
+
+    if os == 'Windows':
+        sys('cls')
+    else:
+        sys('clear')
 
 
 #First, how many "Xs"
@@ -28,17 +30,19 @@ for i in range(shape):
         print(M)
         num = int(input("Insert in [" +str(i+1) +str( j+1)+"]: "))
         M[i, j] = num 
-    pass
 
 print(M)
 
 
-for k in range(shape):
+print("triu")
+print(np.triu(M))
+
+
+for k in range(1, shape):
     for i in range(k+1, shape+1):
-        for j in range(shape+1):
-            print(M)
+        for j in range(1, shape+1):
             M[i,j] = M[i,j] - ( (M[k,j] * M[i,j]) / M[k,k]  )
-        pass
-    pass
+
+print("My try")
 print(M)
 
