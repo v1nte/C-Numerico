@@ -18,7 +18,7 @@ def clear():
 #First, how many "Xs"
 shape = int(input("How many Xs?: "))
 
-arr = np.zeros((shape,1)) #a zero vector
+arr = np.zeros((shape,1)) #a null vector
 arr2 = np.zeros((shape,shape))#a zero cuadratic array 
 M = np.matrix(arr2) #a zero matrix
 M = np.column_stack((M, arr))# append vector to Matrix
