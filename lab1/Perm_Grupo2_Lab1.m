@@ -1,4 +1,4 @@
-function [p] = Perm_Grupo2_Lab2(A,k)
+function [p] = Perm_Grupo2_Lab1(A,k)
     [n,m]=size(A);
     p=eye(n);
     m=max(abs(A(k:n,k)));

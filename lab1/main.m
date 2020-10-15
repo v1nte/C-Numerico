@@ -3,7 +3,11 @@ close all
 clc
 
 
+%
+%
 %Ejercicio 1
+%
+%
 fprintf('Ejercicio 1:\n');
 A=[
    99 -32 -50   0   0   0  -5;
@@ -15,35 +19,45 @@ A=[
    -5   0 -12   0   0   0   42
   ]; 
 b = [220;0;0;0;0;0;0];
-disp(A);
-fprintf('\n');
+fprintf('\n Matriz Ampliada: \n');
 
-disp(b);
+%Mostrar como Matriz ampliada
+disp([A,b]);
 fprintf('\n');
 
 %gauss
-fprintf('gauss\n');
-fprintf('x= \n');
+fprintf('Gauss\n');
+fprintf('x = \n');
 x = Sol_Gauss_Grupo2_Lab1(A,b);
-disp(x);
+disp(x');
 
 %Gauss-Jordan
 y = Gauss_Jordan_Grupo2_Lab1(A,b);
 fprintf('\n');
-fprintf('gauss jordan\n');
+fprintf('Gauss-Jordan\n');
 fprintf('x= \n');
 disp(y);
 
 %Gauss-Seidel
-fprintf('gauss seidel\n');
+fprintf('Gauss-Seidel\n');
 fprintf('x= \n');
+
 largob = length(b);
 z = zeros(1,largob);
-fprintf('cantidad de iteraciones= 10 \n');
-z = Gauss_Seidel_Grupo2_Lab1(A,b,z,10);
+
+fprintf('Cantidad de iteraciones = 100 \n');
+
+z = Gauss_Seidel_Grupo2_Lab1(A,b,z,100);
+
 disp(z);
 
+%
+%
 %Ejercicio 2
+%
+%
+
+fprintf('\n\n\n\n\n');
 fprintf('Ejercicio 2:\n');
 C=[
  1 cos(5/36*pi) -cos(1/9*pi) 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
@@ -78,9 +92,8 @@ C=[
  
 disp(C);
 fprintf('\n');
-d = [0 0 800 0 0 0 1500 0 0 0 1000 0 0 0 1200 0 1000 0 0 0 1500 0 0 0 800 0 0 0];
-d = d'
-disp(d);
+d = [0; 0; 800; 0; 0; 0; 1500; 0; 0; 0; 1000; 0; 0; 0; 1200; 0; 1000; 0; 0; 0; 1500; 0; 0; 0; 800; 0; 0; 0];
+disp(d');
 
 %Gauss
 fprintf('Gauss\n');
@@ -91,16 +104,16 @@ disp(x);
 %Gauss-Jordan
 y = Gauss_Jordan_Grupo2_Lab1(C,d);
 fprintf('\n');
-fprintf('gauss jordan\n');
+fprintf('Gauss-Jordan\n');
 fprintf('x = \n');
 disp(y);
 
 %Gauss-Seidel
 fprintf('Gauss-seidel\n');
-fprintf('x= \n');
+fprintf('x = \n');
 largob = length(b);
 z = zeros(1,largob);
-fprintf('cantidad de iteraciones= 100 \n');
+fprintf('cantidad de iteraciones = 100 \n');
 
 z = Gauss_Seidel_Grupo2_Lab1(A,b,z,100);
 disp(z);
