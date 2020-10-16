@@ -4,11 +4,13 @@ clc
 
 
 %
+%==================
+%   Ejercicio 1
+%==================
 %
-%Ejercicio 1
-%
-%
-fprintf('Ejercicio 1:\n');
+fprintf('==================\n');
+fprintf('   Ejercicio 1: \n');
+fprintf('==================\n');
 A=[
    99 -32 -50   0   0   0  -5;
   -32  72  -5 -35   0   0   0;
@@ -23,33 +25,40 @@ fprintf('\n Matriz Ampliada: \n');
 
 %Mostrar como Matriz ampliada
 disp([A,b]);
-fprintf('\n');
+fprintf('\n\n');
 
 %gauss
+fprintf('------------\n');
 fprintf('Gauss\n');
+fprintf('------------\n');
 fprintf('x = \n');
 x = Sol_Gauss_Grupo2_Lab1(A,b);
 disp(x');
 
 %Gauss-Jordan
 y = Gauss_Jordan_Grupo2_Lab1(A,b);
-fprintf('\n');
+fprintf('\n\n');
+fprintf('------------\n');
 fprintf('Gauss-Jordan\n');
+fprintf('------------\n');
 fprintf('x= \n');
 disp(y);
 
 %Gauss-Seidel
+fprintf('\n\n');
+fprintf('------------\n');
 fprintf('Gauss-Seidel\n');
-fprintf('x= \n');
+fprintf('------------\n');
 
 largob = length(b);
 z = zeros(1,largob);
 
-fprintf('Cantidad de iteraciones = 100 \n');
+fprintf('Cantidad de iteraciones = 20 \n');
+fprintf('x= \n');
 
-z = Gauss_Seidel_Grupo2_Lab1(A,b,z,100);
+z = Gauss_Seidel_Grupo2_Lab1(A,b,z,20);
 
-disp(z);
+disp(z)
 
 %
 %
@@ -58,7 +67,9 @@ disp(z);
 %
 
 fprintf('\n\n\n\n\n');
-fprintf('Ejercicio 2:\n');
+fprintf('==================\n');
+fprintf('   Ejercicio 2: \n');
+fprintf('==================\n');
 C=[
  1 cos(5/36*pi) -cos(1/9*pi) 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
  0 sin(5/36*pi) sin(1/9*pi) -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
@@ -85,35 +96,44 @@ C=[
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -sin(1/4*pi) sin(4/9*pi) 0 cos(1/9*pi) 0 0 0;
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -cos(1/4*pi) cos(4/9*pi) 0 sin(1/9*pi) -1 0 0;
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 cos(2/9*pi) 0 0 -cos(5/36*pi) 0;
- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 sin(2/9*pi) 0 1 sin( 5/36*pi) 0;
- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -sin(7/18*pi) 0 sin(13/36*pi) 1;
- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 cos(7/18*pi) 0 cos(13/36*pi) 0
-  ];
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 sin(2/9*pi) 0 1 sin(5/36*pi) 0;
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 cos(7/18*pi) 0 cos(13/36*pi) 0;
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -sin(7/18*pi) 0 sin(13/36*pi) 1
+ ];
  
 disp(C);
 fprintf('\n');
-d = [0; 0; 800; 0; 0; 0; 1500; 0; 0; 0; 1000; 0; 0; 0; 1200; 0; 1000; 0; 0; 0; 1500; 0; 0; 0; 800; 0; 0; 0];
-disp(d');
+d = [0, 0, 800, 0, 0, 0, 1500, 0, 0, 0, 1000, 0, 0, 0, 1200, 0, 1000, 0, 0, 0, 1500, 0, 0, 0, 800, 0, 0, 0];
+d = d';
+disp(d);
 
 %Gauss
+fprintf('------------\n');
 fprintf('Gauss\n');
+fprintf('------------\n');
 fprintf('x= \n');
 x = Sol_Gauss_Grupo2_Lab1(C,d);
 disp(x);
 
 %Gauss-Jordan
 y = Gauss_Jordan_Grupo2_Lab1(C,d);
-fprintf('\n');
+fprintf('\n\n');
+fprintf('------------\n');
 fprintf('Gauss-Jordan\n');
+fprintf('------------\n');
 fprintf('x = \n');
 disp(y);
 
 %Gauss-Seidel
+fprintf('\n\n');
+fprintf('------------\n');
 fprintf('Gauss-seidel\n');
-fprintf('x = \n');
-largob = length(b);
-z = zeros(1,largob);
-fprintf('cantidad de iteraciones = 100 \n');
+fprintf('------------\n');
 
-z = Gauss_Seidel_Grupo2_Lab1(A,b,z,100);
-disp(z);
+z = zeros(1,length(d));
+
+fprintf('cantidad de iteraciones = 20 \n');
+fprintf('x = \n');
+
+z = Gauss_Seidel_Grupo2_Lab1(C,d,z,5);
+disp(z)
