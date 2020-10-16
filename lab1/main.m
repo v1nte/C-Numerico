@@ -54,10 +54,11 @@ largob = length(b);
 z = zeros(1,largob);
 
 fprintf('Cantidad de iteraciones = 20 \n');
-fprintf('x= \n');
+fprintf('\n ultimas 3 iteraciones: \n');
 
 z = Gauss_Seidel_Grupo2_Lab1(A,b,z,20);
 
+fprintf('X_final = \n');
 disp(z)
 
 %
@@ -133,7 +134,8 @@ fprintf('------------\n');
 z = zeros(1,length(d));
 
 fprintf('cantidad de iteraciones = 20 \n');
-fprintf('x = \n');
+fprintf('\n ultimas 3 iteraciones: \n');
 
-z = Gauss_Seidel_Grupo2_Lab1(C,d,z,5);
+z = Gauss_Seidel_Grupo2_Lab1(C,d,z,20);
+fprintf('X_final = \n');
 disp(z)
