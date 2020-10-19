@@ -1,5 +1,5 @@
 # Cálculo Numérico (Numerical analysis)
-### This is my personal repo for some numerical algorithms implementation. Some with (https://www.gnu.org/software/octave/index)[GNU/Octave] and others with (https://www.python.org/)[Python]
+### This is my personal repo for some numerical algorithms implementation. Some with [GNU/Octave](https://www.gnu.org/software/octave/index) and others with [Python](https://www.python.org/)
 
 
 ## Lab 1:
