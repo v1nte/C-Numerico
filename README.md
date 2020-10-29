@@ -7,3 +7,8 @@
 - Gauss-Jordan
 - Gauss-Seidel
 - Successive overrelaxation (SOR)
+
+## Lab 2:
+- Newton–Raphson
+- ...
+- ...
