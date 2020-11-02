@@ -10,3 +10,4 @@ function A = Perm(A,r,s)
 
   A = P*A;
 
+end
