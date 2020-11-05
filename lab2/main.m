@@ -2,7 +2,8 @@ clc
 clear
 close all
 
-x0 = 5;
+a = 15;
+b = 16;
 
 df = @df;
 f = @f;
@@ -10,9 +11,11 @@ f = @f;
 N = 1000;
 tol = 10^-9;
 
-x_sol = newton(f,df,x0,tol,N)
+m = secant_method(f, a, b, tol, N);
 
-figure;
+
+figure
 subplot(2,1,1);
-plot(x_sol, 'bo');
+plot(m, 'bo-');
+m(end)
 pause
