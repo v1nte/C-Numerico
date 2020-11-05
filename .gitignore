@@ -1,3 +1,4 @@
+#
 # Created by https://www.toptal.com/developers/gitignore/api/python,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,linux
 
@@ -157,3 +158,5 @@ dmypy.json
 .prof
 
 # End of https://www.toptal.com/developers/gitignore/api/python,linux
+# Octave xd
+octave-workspace
