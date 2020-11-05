@@ -10,5 +10,5 @@
 
 ## Lab 2:
 - Newton–Raphson
-- ...
-- ...
+- Bisection
+- Secant
