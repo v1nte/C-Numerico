@@ -8,8 +8,13 @@ b = 5;
 df = @df;
 f = @f;
 
+fprintf('==================\n');
+fprintf('   Ejercicio 1: \n');
+fprintf('==================\n');
+
+
 N = 1000;
-tol = 10^-9;
+tol = 10^-5;
 
 m = bisection_method(f, a, b, tol, N);
 
