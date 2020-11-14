@@ -1,4 +1,4 @@
-function x_sol = bisection_method(f, a, b, tol, N,ej) 
+function x_sol = bisection_method(f, a, b, tol, N) 
   f = @f;
 
   a(1) = a;
@@ -6,7 +6,7 @@ function x_sol = bisection_method(f, a, b, tol, N,ej)
   x_sol(1) = ( a(1) + b(1) )/2;
 
  %feval(f, a(1)) * feval(f, x_sol(1)) < 0
-  if f(a(1), ej) * f(x_sol(1), ej) < 0
+  if f(a(1)) * f(x_sol(1)) < 0
       a(2) = a(1);
       b(2) = x_sol(1);
   else
@@ -18,7 +18,7 @@ function x_sol = bisection_method(f, a, b, tol, N,ej)
 
   i = 2;
   while abs(b(i) - a(i)) >= tol && i <= N
-    if f(a(i), ej) * f(x_sol(i), ej) < 0
+    if f(a(i)) * f(x_sol(i)) < 0
         a(i+1) = a(i);
         b(i+1) = x_sol(i);
     else
