@@ -3,7 +3,7 @@ clear
 close all
 
 a = 6.5; % Punto inicial para Newton y Secante, y extremo izquierdo para bisección
-b = 7.6; % Extremo derecho para bisección, y segunda iteración de Secante
+b = 7.5; % Extremo derecho para bisección, y segunda iteración de Secante
 
 df = @df;
 f = @f;
