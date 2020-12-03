@@ -12,3 +12,6 @@
 - Newton–Raphson
 - Bisection
 - Secant
+
+## Lab 3:
+- Double Pendulum(with Ode45)
