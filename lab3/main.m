@@ -117,6 +117,7 @@ for i=1:length(T)
     xlim ([-1*(l1+l2) (l1+l2)]);
     ylim ([-1*(l1+l2) (l1+l2)]);
     axis(xlim, ylim);
+    title(['t = ', num2str(T(i)), ' segundos'])
     axis equal;
     axis off;
     hold off;
