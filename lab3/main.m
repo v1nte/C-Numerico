@@ -25,9 +25,9 @@ a = m2/m1;
 b = l2/l1;
 c = g/m1;
 
-a1 = pi/2;
+a1 = pi/2; % 90 degrees
 v1 = 0;
-a2 = pi/2;
+a2 = pi/2; % 90 degrees
 v2 = 0;
 
 t_max = 20;
@@ -40,6 +40,11 @@ t_max = 20;
 U(:,1) = U(:,1) - pi/2;
 U(:,3) = U(:,3) - pi/2;
 
+% PLOT all or just the double pendulum
+% 1: Plot everything
+% 0: Plot just pendulum
+flag = 0;
+
 figure()
 for i=1:length(T)
 
@@ -49,31 +54,38 @@ for i=1:length(T)
     pos_m2(1) = pos_m2(1) + pos_m1(1);
     pos_m2(2) = pos_m2(2) + pos_m1(2);
 
-    %% ANGLE 1
-    % Current
-    subplot(3, 1, 1);
-    plot(T(i), U(i,1), 'ro', 'LineWidth', 2, 'Markersize', 3)
+    if flag==1
+      %% ANGLE 1
+      %Current
+      subplot(3, 1, 1);
+      plot(T(i), U(i,1), 'ro', 'LineWidth', 2, 'Markersize', 3)
 
-    % full record
-    hold on;
-    plot(T, U(:,1), 'g-');
-    title(['Angulo 1 en t = ', num2str(T(i)), ' segundos'])
-    hold off
+      %full record
+      hold on;
+      plot(T, U(:,1), 'g-');
+      title(['Angulo 1 en t = ', num2str(T(i)), ' segundos'])
+      hold off
 
-    %% ANGLE 2
-    % Current position
-    subplot(3,1,2)
-    plot(T(i), U(i,3), 'ro', 'LineWidth', 2, 'Markersize', 3)
+      %% ANGLE 2
+      % Current position
+      subplot(3,1,2)
+      plot(T(i), U(i,3), 'ro', 'LineWidth', 2, 'Markersize', 3)
 
-    % Full record
-    hold on;
-    plot(T, U(:,3), 'g-');
-    title(['Angulo 2 en t = ', num2str(T(i)), ' segundos'])
-    hold off;
+      % Full record
+      hold on;
+      plot(T, U(:,3), 'g-');
+      title(['Angulo 2 en t = ', num2str(T(i)), ' segundos'])
+      hold off;
+    end
 
 
     %% ANIMATION
-    subplot(3,1,3)
+    % Lines
+    if flag == 1
+      subplot(3, 1, 3)
+    else
+      subplot(1, 1, 1)
+    end
     plot(
         [0 pos_m1(1)],
         [0 pos_m1(2)],
@@ -84,10 +96,18 @@ for i=1:length(T)
     plot(
         [pos_m1(1) pos_m2(1)],
         [pos_m1(2) pos_m2(2)],
-        'b'
+        'b-'
     );
 
-    % Trail
+    % m1
+    hold on;
+    plot(
+        pos_m1(1),
+        pos_m1(2),
+        'ro'
+    )
+
+    % m2
     hold on;
     plot(
         pos_m2(1),
@@ -98,7 +118,7 @@ for i=1:length(T)
     ylim ([-1*(l1+l2) (l1+l2)]);
     axis(xlim, ylim);
     axis equal;
-
+    axis off;
     hold off;
     drawnow;
 end
