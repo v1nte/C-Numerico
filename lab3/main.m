@@ -16,14 +16,9 @@ m2 = masa;
 l1 = largo;
 l2 = largo;
 
-%x_1 = l1*sin(Y(:1,));
-%y_1 = (l1+l2)*l1*cos(Y(:,1));
-%x_2 = l1
-%y_2 =
-
 a = m2/m1;
 b = l2/l1;
-c = g/m1;
+c = g/l1;
 
 a1 = pi/2; % 90 degrees
 v1 = 0;
@@ -64,7 +59,8 @@ for i=1:length(T)
       hold on;
       plot(T, U(:,1), 'g-');
       title(['Angulo 1 en t = ', num2str(T(i)), ' segundos'])
-      hold off
+      ylabel('Angulo (rad)')
+      hold off;
 
       %% ANGLE 2
       % Current position
@@ -75,6 +71,7 @@ for i=1:length(T)
       hold on;
       plot(T, U(:,3), 'g-');
       title(['Angulo 2 en t = ', num2str(T(i)), ' segundos'])
+      ylabel('Angulo (rad)')
       hold off;
     end
 
