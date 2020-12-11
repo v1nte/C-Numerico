@@ -25,15 +25,18 @@ v1 = 0;
 a2 = pi/2; % 90 degrees
 v2 = 0;
 
-t_max = 20;
+t = 0;
+t_max = 30;
 
+%a1 = mod(a1, pi*2);
+%a2 = mod(a2, pi*2);
 
-[T,U] = ode45(@(t,u)pendulo_doble(t, u, a,b,c),[0, t_max], [a1, v1, a2, v2], options);
+[T,U] = ode45(@(t,u)pendulo_doble(t, u, a,b,c),[0, t_max], [a1, v1, a2, v2])
 
 
 % Rotate
-U(:,1) = U(:,1) - pi/2;
-U(:,3) = U(:,3) - pi/2;
+U(:,1) = U(:,1) - pi;
+U(:,3) = U(:,3) - pi;
 
 % PLOT all or just the double pendulum
 % 1: Plot everything
@@ -42,12 +45,14 @@ flag = 0;
 
 figure()
 for i=1:length(T)
-
     % Get cartesian coordinates
-    pos_m1 = pol2cart(U(i,1), l1);
-    pos_m2 = pol2cart(U(i,3), l2);
-    pos_m2(1) = pos_m2(1) + pos_m1(1);
-    pos_m2(2) = pos_m2(2) + pos_m1(2);
+
+    pos_m1(1) = l1*sin(U(i,1)); % X
+    pos_m1(2) = l1*cos(U(i,1)); % Y
+
+    pos_m2(1) = pos_m1(1) + l2*sin(U(i,3)); % X
+    pos_m2(2) = pos_m1(2) + l2*cos(U(i,3)); % Y
+
 
     if flag==1
       %% ANGLE 1
@@ -96,6 +101,7 @@ for i=1:length(T)
         'b-'
     );
 
+
     % m1
     hold on;
     plot(
@@ -117,7 +123,7 @@ for i=1:length(T)
     title(['t = ', num2str(T(i)), ' segundos'])
     axis equal;
     axis off;
-    hold off;
     drawnow;
+    hold off;
 end
 pause
