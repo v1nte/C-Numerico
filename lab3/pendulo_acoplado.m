@@ -1,4 +1,4 @@
-function [T, Y] = pendulo_acoplado(t, u, m1, m2, L, a, k, g) 
+function du = pendulo_acoplado(t, u, m1, m2, L, a, k, g) 
 
   du = zeros(4,1);
 
