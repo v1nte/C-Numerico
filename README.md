@@ -13,5 +13,6 @@
 - Bisection
 - Secant
 
-## Lab 3:
-- Double Pendulum(with Ode45)
+## Lab 3: with animations
+- Double Pendulum
+- Coupled pendulums
