@@ -31,7 +31,7 @@ t_max = 30;
 %a1 = mod(a1, pi*2);
 %a2 = mod(a2, pi*2);
 
-[T,U] = ode45(@(t,u)pendulo_doble(t, u, a,b,c),[0, t_max], [a1, v1, a2, v2])
+[T,U] = ode45(@(t,u)pendulo_doble(t, u, a,b,c),[0, t_max], [a1, v1, a2, v2], options );
 
 
 % Rotate
@@ -117,6 +117,8 @@ for i=1:length(T)
         pos_m2(2),
         'ro'
     )
+
+    % Decorate a little
     xlim ([-1*(l1+l2) (l1+l2)]);
     ylim ([-1*(l1+l2) (l1+l2)]);
     axis(xlim, ylim);
@@ -125,5 +127,14 @@ for i=1:length(T)
     axis off;
     drawnow;
     hold off;
+    
+    pause(0.03);
 end
+% frame = getframe(gcf); 
+% img = frame2im(frame);  
+% [img,cmap] = rgb2ind(img,256);  
+% if k == 1 % imwrite(img,cmap,'PenduloDoble1.gif','gif','LoopCount',Inf,'DelayTime',1); 
+% else 
+% imwrite(img,cmap,'PenduloDoble1.gif','gif','WriteMode','append','DelayTime',0.1); 
+% end
 pause
