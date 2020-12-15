@@ -130,11 +130,12 @@ for i=1:length(T)
     
     pause(0.03);
 end
-% frame = getframe(gcf); 
-% img = frame2im(frame);  
-% [img,cmap] = rgb2ind(img,256);  
-% if k == 1 % imwrite(img,cmap,'PenduloDoble1.gif','gif','LoopCount',Inf,'DelayTime',1); 
-% else 
-% imwrite(img,cmap,'PenduloDoble1.gif','gif','WriteMode','append','DelayTime',0.1); 
-% end
+ %frame = getframe(gcf); 
+ %img = frame2im(frame);  
+ %[img,cmap] = rgb2ind(img,256);  
+ %if k == 1 
+ %  imwrite(img,cmap,'PenduloDoble1.gif','gif','LoopCount',Inf,'DelayTime',1); 
+ %else 
+ %imwrite(img,cmap,'PenduloDoble1.gif','gif','WriteMode','append','DelayTime',0.1); 
+ %end
 pause
