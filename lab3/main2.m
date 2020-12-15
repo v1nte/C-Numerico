@@ -45,11 +45,11 @@ for i=1:length(T)
       %Current
       clc
       subplot(3, 1, 1);
-      plot(T(i), U(i,1), 'ro', 'LineWidth', 2, 'Markersize', 3)
+      plot(T(i), U(i,1)-pi, 'ro', 'LineWidth', 2, 'Markersize', 3)
 
       %full record
       hold on;
-      plot(T, U(:,1), 'g-');
+      plot(T, U(:,1)-pi, 'g-');
       title(['Angulo 1 en t = ', num2str(T(i)), ' segundos'])
       ylabel('Angulo (rad)')
       hold off;
@@ -57,11 +57,11 @@ for i=1:length(T)
       %% ANGLE 2
       % Current position
       subplot(3,1,2)
-      plot(T(i), U(i,3), 'ro', 'LineWidth', 2, 'Markersize', 3)
+      plot(T(i), U(i,3)-pi, 'ro', 'LineWidth', 2, 'Markersize', 3)
 
       % Full record
       hold on;
-      plot(T, U(:,3), 'g-');
+      plot(T, U(:,3)-pi, 'g-');
       title(['Angulo 2 en t = ', num2str(T(i)), ' segundos'])
       ylabel('Angulo (rad)')
       hold off;
