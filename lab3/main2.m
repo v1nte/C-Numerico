@@ -8,10 +8,10 @@ options = odeset('RelTol', 1e-5,'AbsTol',[1e-5 1e-5 1e-5 1e-5]);
 g = 9.81;
 m1 = 5;
 m2 = 5;
-L = 1;
-a = 0.5;
-k = 5;
-c = 0.5;
+L = 5;
+a = L/3;
+k = 1;
+c = 0.1;
 Tmax = 50;
 
 a1 = 0;
@@ -56,14 +56,14 @@ for i=1:length(T)
   );
   hold on
 
-  xd(1) = (L/2)*sin(U(i,1)) - L/2; 
-  xd(2) = (L/2)*cos(U(i,1));
-  xd(3) = (L/2)*sin(U(i,1)) + L/2;
-  xd(4) = (L/2)*cos(U(i,3));
+  spring(1) = a*sin(U(i,1)) - L/2; 
+  spring(2) = a*cos(U(i,1));
+  spring(3) = a*sin(U(i,3)) + L/2;
+  spring(4) = a*cos(U(i,3));
 
   plot(
-      [xd(1) xd(3)],
-      [xd(2) xd(4)],
+      [spring(1) spring(3)],
+      [spring(2) spring(4)],
       'r--',
       'LineWidth', 1
   )
@@ -77,9 +77,5 @@ for i=1:length(T)
   title(['t = ', num2str(T(i)), 'segundos']);
 
   drawnow
-
-
 end
-
-
 pause
