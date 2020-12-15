@@ -6,7 +6,7 @@ close all
 options = odeset('RelTol', 1e-5,'AbsTol',[1e-5 1e-5 1e-5 1e-5]);
 
 % Estamos en la Tierra
-g = 9.81;
+g = -9.81;
 
 largo = 5;
 masa = 5;
@@ -28,20 +28,12 @@ v2 = 0;
 t = 0;
 t_max = 30;
 
-%a1 = mod(a1, pi*2);
-%a2 = mod(a2, pi*2);
-
 [T,U] = ode45(@(t,u)pendulo_doble(t, u, a,b,c),[0, t_max], [a1, v1, a2, v2], options );
-
-
-% Rotate
-U(:,1) = U(:,1) - pi;
-U(:,3) = U(:,3) - pi;
 
 % PLOT all or just the double pendulum
 % 1: Plot everything
 % 0: Plot just pendulum
-flag = 0;
+flag = 1;
 
 figure()
 for i=1:length(T)
